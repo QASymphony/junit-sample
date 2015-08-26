@@ -29,4 +29,4 @@ Command arguments: -cp D:\Demo\junit-sample\target\*;
 
 Refer image below:
 
-![Agent Configuration](https://github.com/QASymphony/junit-sample/blob/master/documentation/agent-configuration.png)
+![Agent Configuration](/documentation/agent-configuration.png?raw=true)
