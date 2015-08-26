@@ -12,21 +12,4 @@ How to use sample package to integrate with qTest Automation Host
 - Set up new agent with configure Agent below:
 
 ### Agent Configuration
-###### Test Scripts
-```sh
-Directory: D:\SampleDemo\junit-sample
-Scripting libs: D:\SampleDemo\junit-sample\libs
-Include: **/*.class
-```
-
-###### Test Execution
-```sh
-Executable mode: Command
-Executable home: C:\Program Files\Java\jdk1.7.0_21
-Command: java
-Command arguments: -cp D:\Demo\junit-sample\target\*;
-```
-
-Refer image below:
-
 ![Agent Configuration](/documentation/agent-configuration.png?raw=true)
