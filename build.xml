@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JUnitHelloWord" default="all" basedir=".">
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- Edit here: select main class to run test suite -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <property name="junit.class.name" value="sample.SuitTest"/>
+
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <!-- PLEASE DO NOT EDIT FROM HERE TO END OF FILE -->
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++ -->
+    <description>Builds, tests, and runs JUnitHelloWord</description>
+    <property name="test.dir" location="${basedir}/src/test/java"/>
+    <property name="bin.dir" value="${basedir}/target"/>
+    <property name="report.dir" location="${bin.dir}/junit-reports"/>
+    <property name="report.data.dir" location="${bin.dir}/junit-reports/data"/>
+    <!-- the location of all the jar files we downloaded -->
+    <property name="jars" value="libs"/>
+
+    <!-- the ant job for cleaning up our environment -->
+    <target name="clean" description="Remove all .class files">
+        <delete dir="target"/>
+        <delete includeEmptyDirs="true" failonerror="false">
+            <fileset dir="${test.dir}">
+                <include name="**/*.class"/>
+            </fileset>
+        </delete>
+    </target>
+
+    <target name="classpath">
+        <path id="classpath">
+            <fileset dir="${jars}">
+                <include name="**/*.jar" />
+            </fileset>
+            <pathelement location="${bin.dir}/classes" />
+            <pathelement location="${bin.dir}/test-classes" />
+        </path>
+    </target>
+
+    <!-- the ant job for compiling our code -->
+    <target name="compile" depends="clean,classpath">
+        <mkdir dir="${bin.dir}"/>
+        <mkdir dir="${bin.dir}/classes"/>
+        <javac srcdir="src/main/java" destdir="${bin.dir}/classes" classpathref="classpath" includeantruntime="false"/>
+    </target>
+
+    <!-- the ant job for compiling our test code -->
+    <target name="compile-test" depends="compile">
+        <mkdir dir="${bin.dir}/test-classes"/>
+        <javac srcdir="src/test/java" destdir="${bin.dir}/test-classes" classpathref="classpath" includeantruntime="false"/>
+    </target>
+
+    <target name="test-jar" depends="compile-test">
+        <jar destfile="${bin.dir}/${ant.project.name}.jar" basedir="${bin.dir}/test-classes">
+            <manifest>
+                <attribute name="Main-Class" value="${junit.class.name}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="package" depends="test-jar">
+    </target>
+
+    <target name="all" depends="compile-test">
+        <mkdir dir="${report.data.dir}"/>
+        <mkdir dir="${report.dir}"/>
+        <junit fork="no" haltonfailure="no" showoutput="yes" printsummary="true">
+            <test name="${junit.class.name}" todir="${report.data.dir}"/>
+            <formatter type="brief" usefile="false"/>
+            <formatter type="xml"/>
+            <classpath refid="classpath" />
+        </junit>
+        <junitreport todir="${report.dir}">
+            <fileset dir="${report.data.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${report.dir}"/>
+        </junitreport>
+    </target>
+
+</project>
