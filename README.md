@@ -26,3 +26,7 @@ Executable home: C:\Program Files\Java\jdk1.7.0_21
 Command: java
 Command arguments: -cp D:\Demo\junit-sample\target\*;
 ```
+
+Refer image below:
+
+![Agent Configuration](https://github.com/QASymphony/junit-sample/blob/master/documentation/agent-configuration.png)
