@@ -63,7 +63,7 @@
     <target name="all" depends="compile-test">
         <mkdir dir="${report.data.dir}"/>
         <mkdir dir="${report.dir}"/>
-        <junit fork="true" haltonfailure="no" showoutput="yes" printsummary="true">
+        <junit fork="no" haltonfailure="no" showoutput="yes" printsummary="true">
             <test name="${junit.class.name}" todir="${report.data.dir}"/>
             <formatter type="brief" usefile="false"/>
             <formatter type="xml"/>
