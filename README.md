@@ -13,4 +13,4 @@ JUnit Sample demo integrate with qTest Automation Host
 - Set up new agent with configure Agent below:
 
 ### Agent Configuration
-![Agent Configuration](/documentation/agent-configuration.png?raw=true)
+![Agent Configuration](/agent-configuration.png?raw=true)
