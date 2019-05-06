@@ -1,16 +1,6 @@
 ### jUnit Sample Demo 
 
-This package includes sample java code integrate with JUnit testing framework.
+This repo includes a sample JUnit project for qTest Automation Host integration demonstration. Refer to below article to learn how to integrate this project with qTest Automation Host.
 
-This package can be compiled with Maven / Ant
-
-JUnit Sample demo integrate with qTest Automation Host
-
-### How to use sample package to integrate with qTest Automation Host
-- First, setup qTest Automation Host. And install JUnit for Java framework in qTest Automation Host.
-- Download JUnit sample package and unzip in your directory (eg: D:\Demo\junit-sample).
-- Open command line at directory D:\Demo\junit-sample and execute command: *mvn clean compile package test*
-- Set up new agent with configure Agent below:
-
-### Agent Configuration
-![Agent Configuration](/agent-configuration.png?raw=true)
+1. [Integrate JUnit for Java with Universal Agent (qTest Elite users only)](https://support.qasymphony.com/hc/en-us/articles/360005092351-Integrate-JUnit-for-Java-with-Universal-Agent)
+2. [Create JUnit for Java Agent from Automation Host (for qTest non-Elite users)](https://support.qasymphony.com/hc/en-us/articles/115005558763-Create-JUnit-for-Java-Agent-from-Automation-Host-v-1-3-8-or-Later)
