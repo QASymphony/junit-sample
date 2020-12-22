@@ -1,4 +1,4 @@
-### jUnit Sample Demo Test
+### jUnit Sample Demo
 
 This repo includes a sample JUnit project for qTest Automation Host integration demonstration. Refer to below article to learn how to integrate this project with qTest Automation Host.
 
